@@ -63,7 +63,6 @@ src/
 -   **routes/**: Maps API endpoints to controller functions.
 -   **services/**: Contains business logic (mock audio download, transcription, and DB save).
 -   **utils/**: Helper utilities like retry logic for failed downloads.
--   **types/**: TypeScript interfaces for request/response typing.
 -   **app.ts**: Configures the Express app with middleware and routes.
 -   **index.ts**: Starts the server and connects to MongoDB.
 

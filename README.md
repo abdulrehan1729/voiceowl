@@ -55,6 +55,40 @@ src/
 
 ---
 
+## 🧩 Code Structure Explanation
+
+-   **config/**: Handles database connection logic.
+-   **controllers/**: Receives HTTP requests, validates input, and calls the appropriate service functions.
+-   **models/**: Defines MongoDB schemas and models using Mongoose.
+-   **routes/**: Maps API endpoints to controller functions.
+-   **services/**: Contains business logic (mock audio download, transcription, and DB save).
+-   **utils/**: Helper utilities like retry logic for failed downloads.
+-   **types/**: TypeScript interfaces for request/response typing.
+-   **app.ts**: Configures the Express app with middleware and routes.
+-   **index.ts**: Starts the server and connects to MongoDB.
+
+---
+
+## 📝 Assumptions
+
+-   The audio file URL provided is publicly accessible and returns a valid audio file.
+-   Actual transcription logic is not implemented; it is mocked as `"transcribed text"`.
+-   MongoDB is either running locally or via MongoDB Atlas, and connection details are provided in `.env`.
+-   No authentication is required for the `/api/transcription` endpoint in this version.
+
+---
+
+## 🚀 Improvements for Production
+
+-   **Authentication & Authorization**: Implement JWT or OAuth2 for secure API access.
+-   **Real Transcription Service**: Integrate with an actual speech-to-text API like Google Speech-to-Text or AWS Transcribe.
+-   **File Validation**: Ensure the provided URL points to a valid audio format before processing.
+-   **Error Logging**: Use a logging library (e.g., Winston or Pino) for better error tracking.
+-   **Rate Limiting**: Prevent abuse by adding rate-limiting middleware.
+-   **Cloud Storage**: Store audio files in S3 or similar before transcription.
+-   **Containerization**: Package using Docker for consistent deployment.
+-   **CI/CD Pipeline**: Automate testing and deployment.
+
 ## ⚙️ Installation
 
 ```bash
